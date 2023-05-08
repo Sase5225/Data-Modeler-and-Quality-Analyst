@@ -1,0 +1,19 @@
+Seibold - Notes on the task: 
+
+- In this refactored version, the conditions for applicable sections have been consolidated using an OR operator. This helps simplify the logic and reduce redundancy in the query.
+
+- This version also enhances the readability and maintainability of the query while keeping the logic intact.
+
+- For the Affiliates: 
+Given that they all default to 'Student' via the ELSE statement at the end of the original CASE, we could just remove this portion of the code. However, should this be a mistake, there should be an additional 'ELSE' added to retain 'Affiliates' who are not described as 'Student Employee' or 'Continuing Ed Non-Credit Students.' 
+
+- For the Members:
+Likewise, should this be a mistake, there should be an additional 'ELSE' added to retain 'Members' who are not described as 'Faculty.'
+
+-The 'POI_%' has been changed to 'POI%' reducing redundancy. 
+
+- != has been changed in all instances to <> to meet ISO standards. 
+
+- In the inner join, the use of listing helps to consolidate the 'not equal to' parts of the code.
+
+- In the left join, the '%cu.edu' was moved out of the first WHERE clause since it also appears in the overall join thus reducing redundancy. 
